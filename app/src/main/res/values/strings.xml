@@ -9,6 +9,7 @@
     <string name="tab_settings">设置</string>
 
     <!-- Player -->
+     <string name="now_songs">没有音乐</string>
     <string name="now_playing">正在播放</string>
     <string name="no_song_playing">未播放音乐</string>
     <string name="play">播放</string>
