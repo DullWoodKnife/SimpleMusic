@@ -18,7 +18,7 @@ jobs:
           java-version: '17'
       
       - name: Create Gradle Wrapper
-        if: !(exists('gradlew'))
+        if: hashFiles('gradlew') == ''
         run: |
           mkdir -p gradle/wrapper
           curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradlew -o gradlew
