@@ -82,6 +82,15 @@ public class MusicScanner {
                 String mimeType = cursor.getString(mimeTypeColumn);
                 String data = cursor.getString(dataColumn);
 
+                // 处理编码问题 - 尝试检测并修复乱码
+                title = fixEncoding(title);
+                artist = fixEncoding(artist);
+                album = fixEncoding(album);
+
+                if (TextUtils.isEmpty(title)) {
+                    // 如果标题为空，尝试从文件名提取
+                    title = extractTitleFromPath(data);
+                }
                 if (TextUtils.isEmpty(title)) {
                     title = "Unknown";
                 }
@@ -126,6 +135,58 @@ public class MusicScanner {
         }
 
         return songs;
+    }
+
+    /**
+     * 尝试修复编码问题
+     */
+    private String fixEncoding(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+        
+        // 尝试检测是否为乱码 (常见GBK编码的中文被当成ISO-8859-1或其他编码读取)
+        try {
+            // 如果字符串包含明显的乱码特征字符，尝试转换
+            byte[] bytes = input.getBytes("ISO-8859-1");
+            String converted = new String(bytes, "UTF-8");
+            // 如果转换后变成问号或空，说明原来可能是有效的UTF-8
+            if (converted.contains("?") || converted.trim().isEmpty()) {
+                return input;
+            }
+            // 如果转换后内容不同，可能是编码问题
+            if (!converted.equals(input)) {
+                return converted;
+            }
+        } catch (Exception e) {
+            // 忽略转换错误
+        }
+        
+        return input;
+    }
+
+    /**
+     * 从文件路径提取歌曲标题
+     */
+    private String extractTitleFromPath(String path) {
+        if (path == null || path.isEmpty()) {
+            return null;
+        }
+        try {
+            // 获取文件名（不含扩展名）
+            int lastSlash = path.lastIndexOf('/');
+            if (lastSlash >= 0) {
+                String filename = path.substring(lastSlash + 1);
+                int dot = filename.lastIndexOf('.');
+                if (dot > 0) {
+                    return filename.substring(0, dot);
+                }
+                return filename;
+            }
+        } catch (Exception e) {
+            // 忽略错误
+        }
+        return null;
     }
 
     public Map<String, Folder> scanFolders(List<Song> songs) {
@@ -224,6 +285,15 @@ public class MusicScanner {
                 String mimeType = cursor.getString(mimeTypeColumn);
                 String data = cursor.getString(dataColumn);
 
+                // 处理编码问题 - 尝试检测并修复乱码
+                title = fixEncoding(title);
+                artist = fixEncoding(artist);
+                album = fixEncoding(album);
+
+                // 如果标题为空，尝试从文件名提取
+                if (TextUtils.isEmpty(title)) {
+                    title = extractTitleFromPath(data);
+                }
                 if (TextUtils.isEmpty(title)) title = "Unknown";
                 if (TextUtils.isEmpty(artist)) artist = "Unknown Artist";
                 if (TextUtils.isEmpty(album)) album = "Unknown Album";

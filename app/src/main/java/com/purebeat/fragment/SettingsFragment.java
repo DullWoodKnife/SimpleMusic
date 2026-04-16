@@ -1,6 +1,7 @@
 package com.purebeat.fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -34,11 +35,15 @@ import java.util.concurrent.Executors;
 
 public class SettingsFragment extends Fragment {
 
-    private TextView tvScanMusic, tvSelectBackground, tvRemoveBackground, tvAbout;
+    private TextView tvScanMusic, tvSelectBackground, tvRemoveBackground, tvThemeColor, tvAbout;
     private ExecutorService executor;
     private Handler mainHandler;
 
     private ActivityResultLauncher<String> imagePickerLauncher;
+
+    // 主题颜色数组
+    private final String[] themeColors = {"#6200EE", "#2196F3", "#4CAF50", "#FF9800", "#F44336", "#E91E63", "#009688", "#3F51B5"};
+    private final String[] themeColorNames = {"紫色", "蓝色", "绿色", "橙色", "红色", "粉色", "青色", "靛蓝"};
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +73,7 @@ public class SettingsFragment extends Fragment {
         tvScanMusic = view.findViewById(R.id.tv_scan_music);
         tvSelectBackground = view.findViewById(R.id.tv_select_background);
         tvRemoveBackground = view.findViewById(R.id.tv_remove_background);
+        tvThemeColor = view.findViewById(R.id.tv_theme_color);
         tvAbout = view.findViewById(R.id.tv_about);
 
         executor = Executors.newSingleThreadExecutor();
@@ -76,6 +82,7 @@ public class SettingsFragment extends Fragment {
         tvScanMusic.setOnClickListener(v -> scanMusic());
         tvSelectBackground.setOnClickListener(v -> selectBackgroundImage());
         tvRemoveBackground.setOnClickListener(v -> removeBackgroundImage());
+        tvThemeColor.setOnClickListener(v -> showThemeColorPicker());
         tvAbout.setOnClickListener(v -> showAboutDialog());
     }
 
@@ -167,6 +174,21 @@ public class SettingsFragment extends Fragment {
             .setTitle(R.string.about)
             .setMessage("PureBeat v1.0.0\n\n一款简洁的本地音乐播放器\n支持多种音频格式\n无需登录，保护隐私")
             .setPositiveButton(R.string.ok, null)
+            .show();
+    }
+
+    private void showThemeColorPicker() {
+        new com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+            .setTitle(R.string.select_theme_color)
+            .setItems(themeColorNames, (dialog, which) -> {
+                // 保存主题颜色到 SharedPreferences
+                requireActivity().getSharedPreferences("purebeat_prefs", Context.MODE_PRIVATE)
+                    .edit()
+                    .putString("theme_color", themeColors[which])
+                    .apply();
+                Toast.makeText(getContext(), "主题颜色已更改，重启应用后生效", Toast.LENGTH_SHORT).show();
+            })
+            .setNegativeButton(R.string.cancel, null)
             .show();
     }
 
