@@ -202,7 +202,13 @@ public class MusicController {
             } else if (mediaController.hasPreviousMediaItem()) {
                 mediaController.seekToPrevious();
             } else {
-                mediaController.seekTo(mediaController.getDuration(), 0);
+                //mediaController.seekTo(mediaController.getDuration(), 0);
+                // 原错误代码（类似这样）：
+               // mediaController.seekTo(mediaController.getDuration(), 0);
+
+                // 修改后代码：
+               mediaController.seekTo((int) mediaController.getDuration(), 0); // ✅ 强制转换为 int
+
             }
         }
     }
