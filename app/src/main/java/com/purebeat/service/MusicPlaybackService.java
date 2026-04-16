@@ -189,7 +189,13 @@ public class MusicPlaybackService extends MediaSessionService {
             player.seekToPrevious();
             currentIndex = player.getCurrentMediaItemIndex();
         } else {
-            player.seekTo(player.getDuration(), 0);
+            //player.seekTo(player.getDuration(), 0);
+            // 原错误代码（类似这样）：
+            // mediaController.seekTo(mediaController.getDuration(), 0);
+
+            // 修改后代码：
+            player.seekTo((int) player.getDuration(), 0); // ✅ 强制转换为 int
+
             currentIndex = currentPlaylist.size() - 1;
         }
     }
