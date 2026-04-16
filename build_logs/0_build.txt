@@ -1,0 +1,247 @@
+﻿2026-04-16T10:18:01.9559114Z Current runner version: '2.333.1'
+2026-04-16T10:18:01.9593553Z ##[group]Runner Image Provisioner
+2026-04-16T10:18:01.9594820Z Hosted Compute Agent
+2026-04-16T10:18:01.9595823Z Version: 20260213.493
+2026-04-16T10:18:01.9596869Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-04-16T10:18:01.9598091Z Build Date: 2026-02-13T00:28:41Z
+2026-04-16T10:18:01.9599649Z Worker ID: {d9396db6-37e8-437b-a54b-07a8f1c13e07}
+2026-04-16T10:18:01.9600861Z Azure Region: eastus2
+2026-04-16T10:18:01.9601743Z ##[endgroup]
+2026-04-16T10:18:01.9603997Z ##[group]Operating System
+2026-04-16T10:18:01.9604946Z Ubuntu
+2026-04-16T10:18:01.9605601Z 24.04.4
+2026-04-16T10:18:01.9606448Z LTS
+2026-04-16T10:18:01.9607098Z ##[endgroup]
+2026-04-16T10:18:01.9607905Z ##[group]Runner Image
+2026-04-16T10:18:01.9609003Z Image: ubuntu-24.04
+2026-04-16T10:18:01.9609890Z Version: 20260413.86.1
+2026-04-16T10:18:01.9611838Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260413.86/images/ubuntu/Ubuntu2404-Readme.md
+2026-04-16T10:18:01.9614339Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260413.86
+2026-04-16T10:18:01.9615972Z ##[endgroup]
+2026-04-16T10:18:01.9617778Z ##[group]GITHUB_TOKEN Permissions
+2026-04-16T10:18:01.9621030Z Contents: read
+2026-04-16T10:18:01.9621954Z Metadata: read
+2026-04-16T10:18:01.9622728Z Packages: read
+2026-04-16T10:18:01.9623619Z ##[endgroup]
+2026-04-16T10:18:01.9626542Z Secret source: Actions
+2026-04-16T10:18:01.9627891Z Prepare workflow directory
+2026-04-16T10:18:02.0102672Z Prepare all required actions
+2026-04-16T10:18:02.0158873Z Getting action download info
+2026-04-16T10:18:02.3642136Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-04-16T10:18:02.4733571Z Download action repository 'actions/setup-java@v4' (SHA:c1e323688fd81a25caa38c78aa6df2d33d3e20d9)
+2026-04-16T10:18:02.8189682Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-04-16T10:18:03.0312440Z Complete job name: build
+2026-04-16T10:18:03.1030827Z ##[group]Run actions/checkout@v4
+2026-04-16T10:18:03.1031711Z with:
+2026-04-16T10:18:03.1032162Z   repository: DullWoodKnife/SimpleMusic
+2026-04-16T10:18:03.1032874Z   token: ***
+2026-04-16T10:18:03.1033286Z   ssh-strict: true
+2026-04-16T10:18:03.1033709Z   ssh-user: git
+2026-04-16T10:18:03.1034134Z   persist-credentials: true
+2026-04-16T10:18:03.1034604Z   clean: true
+2026-04-16T10:18:03.1035029Z   sparse-checkout-cone-mode: true
+2026-04-16T10:18:03.1035535Z   fetch-depth: 1
+2026-04-16T10:18:03.1035947Z   fetch-tags: false
+2026-04-16T10:18:03.1036380Z   show-progress: true
+2026-04-16T10:18:03.1036806Z   lfs: false
+2026-04-16T10:18:03.1037201Z   submodules: false
+2026-04-16T10:18:03.1037627Z   set-safe-directory: true
+2026-04-16T10:18:03.1038309Z ##[endgroup]
+2026-04-16T10:18:03.2090696Z Syncing repository: DullWoodKnife/SimpleMusic
+2026-04-16T10:18:03.2092847Z ##[group]Getting Git version info
+2026-04-16T10:18:03.2093690Z Working directory is '/home/runner/work/SimpleMusic/SimpleMusic'
+2026-04-16T10:18:03.2094757Z [command]/usr/bin/git version
+2026-04-16T10:18:03.2133337Z git version 2.53.0
+2026-04-16T10:18:03.2160028Z ##[endgroup]
+2026-04-16T10:18:03.2183654Z Temporarily overriding HOME='/home/runner/work/_temp/1ab501af-d18b-47f3-85a1-817f47abdbf7' before making global git config changes
+2026-04-16T10:18:03.2186293Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-16T10:18:03.2190032Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/SimpleMusic/SimpleMusic
+2026-04-16T10:18:03.2221207Z Deleting the contents of '/home/runner/work/SimpleMusic/SimpleMusic'
+2026-04-16T10:18:03.2224634Z ##[group]Initializing the repository
+2026-04-16T10:18:03.2229864Z [command]/usr/bin/git init /home/runner/work/SimpleMusic/SimpleMusic
+2026-04-16T10:18:03.2309952Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-04-16T10:18:03.2311915Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-04-16T10:18:03.2314274Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-04-16T10:18:03.2315756Z hint: call:
+2026-04-16T10:18:03.2316507Z hint:
+2026-04-16T10:18:03.2317499Z hint: 	git config --global init.defaultBranch <name>
+2026-04-16T10:18:03.2318942Z hint:
+2026-04-16T10:18:03.2320028Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-04-16T10:18:03.2321819Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-04-16T10:18:03.2323327Z hint:
+2026-04-16T10:18:03.2324138Z hint: 	git branch -m <name>
+2026-04-16T10:18:03.2325082Z hint:
+2026-04-16T10:18:03.2326247Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-04-16T10:18:03.2328242Z Initialized empty Git repository in /home/runner/work/SimpleMusic/SimpleMusic/.git/
+2026-04-16T10:18:03.2331483Z [command]/usr/bin/git remote add origin https://github.com/DullWoodKnife/SimpleMusic
+2026-04-16T10:18:03.2354792Z ##[endgroup]
+2026-04-16T10:18:03.2356139Z ##[group]Disabling automatic garbage collection
+2026-04-16T10:18:03.2359689Z [command]/usr/bin/git config --local gc.auto 0
+2026-04-16T10:18:03.2387554Z ##[endgroup]
+2026-04-16T10:18:03.2389263Z ##[group]Setting up auth
+2026-04-16T10:18:03.2395385Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-16T10:18:03.2425477Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-16T10:18:03.2694739Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-16T10:18:03.2724526Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-16T10:18:03.2934374Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-16T10:18:03.2963940Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-16T10:18:03.3175885Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-16T10:18:03.3209021Z ##[endgroup]
+2026-04-16T10:18:03.3210497Z ##[group]Fetching the repository
+2026-04-16T10:18:03.3219108Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +60f3de11aa0f97a5e86b81cf0e4bcfe01109c57c:refs/remotes/origin/main
+2026-04-16T10:18:03.5245254Z From https://github.com/DullWoodKnife/SimpleMusic
+2026-04-16T10:18:03.5246732Z  * [new ref]         60f3de11aa0f97a5e86b81cf0e4bcfe01109c57c -> origin/main
+2026-04-16T10:18:03.5274195Z ##[endgroup]
+2026-04-16T10:18:03.5276194Z ##[group]Determining the checkout info
+2026-04-16T10:18:03.5278400Z ##[endgroup]
+2026-04-16T10:18:03.5282507Z [command]/usr/bin/git sparse-checkout disable
+2026-04-16T10:18:03.5319911Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-16T10:18:03.5344746Z ##[group]Checking out the ref
+2026-04-16T10:18:03.5347342Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-16T10:18:03.5428893Z Switched to a new branch 'main'
+2026-04-16T10:18:03.5431571Z branch 'main' set up to track 'origin/main'.
+2026-04-16T10:18:03.5438412Z ##[endgroup]
+2026-04-16T10:18:03.5469531Z [command]/usr/bin/git log -1 --format=%H
+2026-04-16T10:18:03.5489917Z 60f3de11aa0f97a5e86b81cf0e4bcfe01109c57c
+2026-04-16T10:18:03.5853668Z ##[group]Run actions/setup-java@v4
+2026-04-16T10:18:03.5854756Z with:
+2026-04-16T10:18:03.5855513Z   distribution: temurin
+2026-04-16T10:18:03.5856412Z   java-version: 17
+2026-04-16T10:18:03.5857249Z   java-package: jdk
+2026-04-16T10:18:03.5858100Z   check-latest: false
+2026-04-16T10:18:03.5859302Z   server-id: github
+2026-04-16T10:18:03.5860389Z   server-username: GITHUB_ACTOR
+2026-04-16T10:18:03.5861446Z   server-password: GITHUB_TOKEN
+2026-04-16T10:18:03.5862573Z   overwrite-settings: true
+2026-04-16T10:18:03.5863556Z   job-status: success
+2026-04-16T10:18:03.5864722Z   token: ***
+2026-04-16T10:18:03.5865529Z ##[endgroup]
+2026-04-16T10:18:03.7808368Z ##[group]Installed distributions
+2026-04-16T10:18:03.7873353Z Resolved Java 17.0.18+8 from tool-cache
+2026-04-16T10:18:03.7874724Z Setting Java 17.0.18+8 as the default
+2026-04-16T10:18:03.7886819Z Creating toolchains.xml for JDK version 17 from temurin
+2026-04-16T10:18:03.7963009Z Writing to /home/runner/.m2/toolchains.xml
+2026-04-16T10:18:03.7964202Z 
+2026-04-16T10:18:03.7964867Z Java configuration:
+2026-04-16T10:18:03.7966297Z   Distribution: temurin
+2026-04-16T10:18:03.7967504Z   Version: 17.0.18+8
+2026-04-16T10:18:03.7969423Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-04-16T10:18:03.7971053Z 
+2026-04-16T10:18:03.7972237Z ##[endgroup]
+2026-04-16T10:18:03.7989115Z Creating settings.xml with server-id: github
+2026-04-16T10:18:03.7990659Z Writing to /home/runner/.m2/settings.xml
+2026-04-16T10:18:03.8663476Z ##[group]Run ./gradlew assembleDebug
+2026-04-16T10:18:03.8664674Z [36;1m./gradlew assembleDebug[0m
+2026-04-16T10:18:03.8694261Z shell: /usr/bin/bash -e {0}
+2026-04-16T10:18:03.8695182Z env:
+2026-04-16T10:18:03.8696306Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-04-16T10:18:03.8698300Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-04-16T10:18:03.8700145Z ##[endgroup]
+2026-04-16T10:18:04.7716008Z Downloading https://services.gradle.org/distributions/gradle-8.2-bin.zip
+2026-04-16T10:18:07.2569033Z ............10%............20%............30%.............40%............50%............60%............70%.............80%............90%............100%
+2026-04-16T10:18:08.3332167Z 
+2026-04-16T10:18:08.3333103Z Welcome to Gradle 8.2!
+2026-04-16T10:18:08.3333479Z 
+2026-04-16T10:18:08.3335862Z Here are the highlights of this release:
+2026-04-16T10:18:08.3341877Z  - Kotlin DSL: new reference documentation, assignment syntax by default
+2026-04-16T10:18:08.3343107Z  - Kotlin DSL is now the default with Gradle init
+2026-04-16T10:18:08.3344218Z  - Improved suggestions to resolve errors in console output
+2026-04-16T10:18:08.3344979Z 
+2026-04-16T10:18:08.3345646Z For more details see https://docs.gradle.org/8.2/release-notes.html
+2026-04-16T10:18:08.3346018Z 
+2026-04-16T10:18:08.4359625Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-04-16T10:18:30.5414101Z > Task :app:preBuild UP-TO-DATE
+2026-04-16T10:18:30.5415468Z > Task :app:preDebugBuild UP-TO-DATE
+2026-04-16T10:18:30.6329501Z > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+2026-04-16T10:18:35.8327627Z > Task :app:dataBindingMergeDependencyArtifactsDebug
+2026-04-16T10:18:35.8373640Z > Task :app:generateDebugResValues
+2026-04-16T10:18:35.8374581Z > Task :app:generateDebugResources
+2026-04-16T10:18:38.2341409Z > Task :app:packageDebugResources
+2026-04-16T10:18:39.4329935Z > Task :app:parseDebugLocalResources
+2026-04-16T10:18:39.8325248Z > Task :app:mergeDebugResources
+2026-04-16T10:18:40.8361749Z > Task :app:javaPreCompileDebug
+2026-04-16T10:18:41.2342352Z > Task :app:dataBindingGenBaseClassesDebug
+2026-04-16T10:18:41.4328969Z > Task :app:mapDebugSourceSetPaths
+2026-04-16T10:18:41.4329892Z > Task :app:checkDebugAarMetadata
+2026-04-16T10:18:41.4330573Z > Task :app:createDebugCompatibleScreenManifests
+2026-04-16T10:18:41.4331279Z > Task :app:extractDeepLinksDebug
+2026-04-16T10:18:41.7329811Z > Task :app:processDebugMainManifest
+2026-04-16T10:18:42.0328473Z > Task :app:processDebugManifest
+2026-04-16T10:18:42.1329733Z > Task :app:mergeDebugShaders
+2026-04-16T10:18:42.1352714Z > Task :app:compileDebugShaders NO-SOURCE
+2026-04-16T10:18:42.1467690Z > Task :app:generateDebugAssets UP-TO-DATE
+2026-04-16T10:18:42.2341556Z > Task :app:mergeDebugAssets FROM-CACHE
+2026-04-16T10:18:42.2399329Z > Task :app:compressDebugAssets
+2026-04-16T10:18:42.2449154Z > Task :app:desugarDebugFileDependencies
+2026-04-16T10:18:43.4342207Z > Task :app:mergeDebugJniLibFolders FROM-CACHE
+2026-04-16T10:18:43.4371645Z > Task :app:checkDebugDuplicateClasses
+2026-04-16T10:18:43.5332695Z > Task :app:mergeDebugNativeLibs NO-SOURCE
+2026-04-16T10:19:12.0339591Z > Task :app:processDebugManifestForPackage
+2026-04-16T10:19:13.5329719Z > Task :app:mergeExtDexDebug
+2026-04-16T10:19:17.5342384Z > Task :app:stripDebugDebugSymbols NO-SOURCE
+2026-04-16T10:19:17.5383276Z > Task :app:mergeLibDexDebug
+2026-04-16T10:19:19.0325312Z > Task :app:processDebugResources
+2026-04-16T10:19:19.4325354Z > Task :app:validateSigningDebug
+2026-04-16T10:19:26.4330635Z 
+2026-04-16T10:19:26.4377560Z /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/database/PlaylistEntity.java:7: warning: There are multiple good constructors and Room will pick the no-arg constructor. You can use the @Ignore annotation to eliminate unwanted constructors.
+2026-04-16T10:19:26.4380081Z > Task :app:compileDebugJavaWithJavac
+2026-04-16T10:19:26.4395270Z public class PlaylistEntity {
+2026-04-16T10:19:26.4439106Z        ^
+2026-04-16T10:19:26.4471149Z /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/database/PlaylistSongCrossRef.java:19: warning: There are multiple good constructors and Room will pick the no-arg constructor. You can use the @Ignore annotation to eliminate unwanted constructors.
+2026-04-16T10:19:26.4489318Z public class PlaylistSongCrossRef {
+2026-04-16T10:19:26.4509041Z        ^
+2026-04-16T10:19:26.4560698Z /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/database/BackgroundImageEntity.java:7: warning: There are multiple good constructors and Room will pick the no-arg constructor. You can use the @Ignore annotation to eliminate unwanted constructors.
+2026-04-16T10:19:26.4569272Z public class BackgroundImageEntity {
+2026-04-16T10:19:26.4619142Z        ^
+2026-04-16T10:19:26.4640713Z /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/database/PlaylistEntity.java:7: warning: There are multiple good constructors and Room will pick the no-arg constructor. You can use the @Ignore annotation to eliminate unwanted constructors.
+2026-04-16T10:19:26.4659154Z public class PlaylistEntity {
+2026-04-16T10:19:26.4689323Z        ^
+2026-04-16T10:19:26.4736263Z /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/database/PlaylistSongCrossRef.java:19: warning: There are multiple good constructors and Room will pick the no-arg constructor. You can use the @Ignore annotation to eliminate unwanted constructors.
+2026-04-16T10:19:26.4769186Z public class PlaylistSongCrossRef {
+2026-04-16T10:19:26.4799124Z        ^
+2026-04-16T10:19:26.4830865Z /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/database/BackgroundImageEntity.java:7: warning: There are multiple good constructors and Room will pick the no-arg constructor. You can use the @Ignore annotation to eliminate unwanted constructors.
+2026-04-16T10:19:26.4850541Z public class BackgroundImageEntity {
+2026-04-16T10:19:26.4870354Z        ^
+2026-04-16T10:19:27.2327992Z /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/service/MusicPlaybackService.java:57: error: cannot find symbol
+2026-04-16T10:19:27.2352907Z             public void onPlayerError(Player.ErrorReason errorReason) {
+2026-04-16T10:19:27.2388361Z                                             ^
+2026-04-16T10:19:27.2419676Z   symbol:   class ErrorReason
+2026-04-16T10:19:27.2420423Z   location: interface Player
+2026-04-16T10:19:27.4331680Z Note: /home/runner/work/SimpleMusic/SimpleMusic/app/src/main/java/com/purebeat/adapter/SongAdapter.java uses or overrides a deprecated API.
+2026-04-16T10:19:27.4332755Z 
+2026-04-16T10:19:27.4356536Z Note: Recompile with -Xlint:deprecation for details.
+2026-04-16T10:19:27.4357108Z 1 error
+2026-04-16T10:19:27.4357380Z 6 warnings
+2026-04-16T10:19:27.4357560Z 
+2026-04-16T10:19:27.4357731Z FAILURE: Build failed with an exception.
+2026-04-16T10:19:27.4358093Z 
+2026-04-16T10:19:27.4358873Z * What went wrong:
+2026-04-16T10:19:27.4359395Z Execution failed for task ':app:compileDebugJavaWithJavac'.
+2026-04-16T10:19:27.4360165Z > Compilation failed; see the compiler error output for details.
+2026-04-16T10:19:27.4360647Z 
+2026-04-16T10:19:27.4360762Z * Try:
+2026-04-16T10:19:27.4361117Z > Run with --info option to get more log output.
+2026-04-16T10:19:27.4361619Z > Run with --scan to get full insights.
+2026-04-16T10:19:27.4361941Z 
+2026-04-16T10:19:27.4362074Z BUILD FAILED in 1m 23s
+2026-04-16T10:19:27.4362481Z > Task :app:compileDebugJavaWithJavac FAILED
+2026-04-16T10:19:27.4363278Z 25 actionable tasks: 23 executed, 2 from cache
+2026-04-16T10:19:27.8850272Z ##[error]Process completed with exit code 1.
+2026-04-16T10:19:27.8971650Z Post job cleanup.
+2026-04-16T10:19:28.0710015Z Post job cleanup.
+2026-04-16T10:19:28.1652599Z [command]/usr/bin/git version
+2026-04-16T10:19:28.1692509Z git version 2.53.0
+2026-04-16T10:19:28.1737193Z Temporarily overriding HOME='/home/runner/work/_temp/c0697b48-6a6a-4d3f-ac9c-33a2efe216a9' before making global git config changes
+2026-04-16T10:19:28.1738996Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-16T10:19:28.1750613Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/SimpleMusic/SimpleMusic
+2026-04-16T10:19:28.1783553Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-16T10:19:28.1815250Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-16T10:19:28.2043698Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-16T10:19:28.2064694Z http.https://github.com/.extraheader
+2026-04-16T10:19:28.2078511Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-04-16T10:19:28.2108157Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-16T10:19:28.2320577Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-16T10:19:28.2349379Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-16T10:19:28.2666544Z Cleaning up orphan processes
+2026-04-16T10:19:28.2946703Z Terminate orphan process: pid (2378) (java)
+2026-04-16T10:19:28.2961118Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-java@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

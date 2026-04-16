@@ -54,9 +54,9 @@ public class MusicPlaybackService extends MediaSessionService {
             }
 
             @Override
-            public void onPlayerError(Player.ErrorReason errorReason) {
+            public void onPlayerError(PlaybackException error) {
                 // 播放出错时自动跳过到下一首
-                android.util.Log.e("MusicPlaybackService", "Playback error: " + errorReason);
+                android.util.Log.e("MusicPlaybackService", "Playback error: " + error.getMessage());
                 if (player.hasNextMediaItem()) {
                     playNext();
                 } else if (playbackMode == PlaybackMode.SEQUENCE) {
