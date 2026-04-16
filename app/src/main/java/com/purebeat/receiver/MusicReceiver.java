@@ -19,7 +19,7 @@ public class MusicReceiver extends BroadcastReceiver {
         PureBeatApplication app = PureBeatApplication.getInstance();
         MusicController controller = app.getMusicController();
 
-        if (action.equals(Intent.ACTION_AUDIO_BECOMING_NOISY)) {
+        if (action.equals("android.media.AUDIO_BECOMING_NOISY")) {
             // Pause when headphones are disconnected
             controller.pause();
         }
