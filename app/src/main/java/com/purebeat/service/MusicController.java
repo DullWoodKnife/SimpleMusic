@@ -1,6 +1,6 @@
 package com.purebeat.service;
 
-import android.ComponentName;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
